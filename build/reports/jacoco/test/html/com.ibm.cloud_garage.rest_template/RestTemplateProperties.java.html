@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RestTemplateProperties.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MutualAuthDSG</a> &gt; <a href="index.source.html" class="el_package">com.ibm.cloud_garage.rest_template</a> &gt; <span class="el_source">RestTemplateProperties.java</span></div><h1>RestTemplateProperties.java</h1><pre class="source lang-java linenums">package com.ibm.cloud_garage.rest_template;
+
+import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.util.StringUtils;
+
+public interface RestTemplateProperties&lt;T extends RestTemplateProperties&lt;T&gt;&gt; {
+    static final int DEFAULT_CONNECTIONS = 3;
+    static final int DEFAULT_TIMEOUT = 100;
+
+    String getProviderEndpoint();
+
+    void setProviderEndpoint(String providerEndpoint);
+
+    default T withProviderEndpoint(String providerEndpoint) {
+<span class="nc" id="L15">        this.setProviderEndpoint(providerEndpoint);</span>
+<span class="nc" id="L16">        return (T) this;</span>
+    }
+
+    int getMaxTotalConnections();
+
+    void setMaxTotalConnections(int maxTotalConnections);
+
+    default T withMaxTotalConnections(int maxTotalConnections) {
+<span class="nc" id="L24">        this.setMaxTotalConnections(maxTotalConnections);</span>
+<span class="nc" id="L25">        return (T) this;</span>
+    }
+
+    int getConnectTimeOutInSeconds();
+
+    void setConnectTimeOutInSeconds(int connectTimeOutInSeconds);
+
+    default T withConnectTimeOutInSeconds(int connectTimeOutInSeconds) {
+<span class="nc" id="L33">        this.setConnectTimeOutInSeconds(connectTimeOutInSeconds);</span>
+<span class="nc" id="L34">        return (T) this;</span>
+    }
+
+    int getSocketTimeOutInSeconds();
+
+    void setSocketTimeOutInSeconds(int socketTimeOutInSeconds);
+
+    default T withSocketTimeOutInSeconds(int socketTimeOutInSeconds) {
+<span class="nc" id="L42">        this.setSocketTimeOutInSeconds(socketTimeOutInSeconds);</span>
+<span class="nc" id="L43">        return (T) this;</span>
+    }
+
+    int getConnectionRequestTimeOutInSeconds();
+
+    void setConnectionRequestTimeOutInSeconds(int connectionRequestTimeOutInSeconds);
+
+    default T withConnectionRequestTimeOutInSeconds(int connectionRequestTimeOutInSeconds) {
+<span class="nc" id="L51">        this.setConnectionRequestTimeOutInSeconds(connectionRequestTimeOutInSeconds);</span>
+<span class="nc" id="L52">        return (T) this;</span>
+    }
+
+    default boolean isProxyRequired() {
+<span class="nc bnc" id="L56" title="All 4 branches missed.">        return StringUtils.hasText(getProxyHostname()) &amp;&amp; getProxyPort() &gt; 0;</span>
+    }
+
+    String getProxyHostname();
+
+    void setProxyHostname(String proxyHostname);
+
+    default T withProxyHostname(String proxyHostname) {
+<span class="nc" id="L64">        this.setProxyHostname(proxyHostname);</span>
+<span class="nc" id="L65">        return (T) this;</span>
+    }
+
+    int getProxyPort();
+
+    void setProxyPort(int proxyPort);
+
+    default T withProxyPort(int proxyPort) {
+<span class="nc" id="L73">        this.setProxyPort(proxyPort);</span>
+<span class="nc" id="L74">        return (T) this;</span>
+    }
+
+    ClientHttpRequestInterceptor getLoggingInterceptor();
+
+    void setLoggingInterceptor(ClientHttpRequestInterceptor loggingInterceptor);
+
+    default T withLoggingInterceptor(ClientHttpRequestInterceptor loggingInterceptor) {
+<span class="nc" id="L82">        this.setLoggingInterceptor(loggingInterceptor);</span>
+<span class="nc" id="L83">        return (T) this;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

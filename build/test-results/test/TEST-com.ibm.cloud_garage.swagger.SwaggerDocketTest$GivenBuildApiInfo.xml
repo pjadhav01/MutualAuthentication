@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildApiInfo" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:50" hostname="Pradeeps-MacBook-Pro-2.local" time="0.049">
+  <properties/>
+  <testcase name="return_value()" classname="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildApiInfo" time="0.049"/>
+  <system-out><![CDATA[09:47:50.055 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'config' of type [null] on target object [com.ibm.cloud_garage.swagger.SwaggerDocket@6d9bac91] or target class [class com.ibm.cloud_garage.swagger.SwaggerDocket] to value [com.ibm.cloud_garage.swagger.SwaggerConfig@1bbb555c]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

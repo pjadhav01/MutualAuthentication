@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RestTemplateBuilder.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MutualAuthDSG</a> &gt; <a href="index.source.html" class="el_package">com.ibm.cloud_garage.rest_template</a> &gt; <span class="el_source">RestTemplateBuilder.java</span></div><h1>RestTemplateBuilder.java</h1><pre class="source lang-java linenums">package com.ibm.cloud_garage.rest_template;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+import org.apache.http.HttpHost;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.conn.ConnectionKeepAliveStrategy;
+import org.apache.http.conn.HttpClientConnectionManager;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.http.client.BufferingClientHttpRequestFactory;
+import org.springframework.http.client.ClientHttpRequestFactory;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
+
+import com.ibm.cloud_garage.http.HttpConnectionKeepAliveStrategy;
+import com.ibm.cloud_garage.logging.outbound.LoggingInterceptor;
+
+<span class="nc" id="L26">public class RestTemplateBuilder {</span>
+<span class="nc" id="L27">    private static final Logger LOGGER = LoggerFactory.getLogger(RestTemplateBuilder.class);</span>
+
+    private static final int MILLISECONDS_PER_SECOND = 1000;
+
+    public RestTemplate build(RestTemplateProperties restTemplateProperties) {
+<span class="nc" id="L32">        RestTemplate restTemplate = new RestTemplate();</span>
+
+<span class="nc" id="L34">        restTemplate.setRequestFactory(new BufferingClientHttpRequestFactory(</span>
+                new HttpComponentsClientHttpRequestFactory(
+<span class="nc" id="L36">                        buildHttpClient(restTemplateProperties))));</span>
+<span class="nc" id="L37">        restTemplate.setInterceptors(buildInterceptors(restTemplateProperties.getLoggingInterceptor()));</span>
+
+<span class="nc" id="L39">        return restTemplate;</span>
+    }
+
+    protected HttpClient buildHttpClient(RestTemplateProperties restTemplateProperties) {
+
+<span class="nc" id="L44">        return HttpClientBuilder.create()</span>
+<span class="nc" id="L45">                .setKeepAliveStrategy(buildConnectionKeepAliveStrategy())</span>
+<span class="nc" id="L46">                .setConnectionManager(buildConnectionManager(restTemplateProperties))</span>
+<span class="nc" id="L47">                .setDefaultRequestConfig(buildRequestConfig(restTemplateProperties))</span>
+<span class="nc" id="L48">                .setProxy(buildProxySettings(restTemplateProperties)).build();</span>
+    }
+
+    protected ConnectionKeepAliveStrategy buildConnectionKeepAliveStrategy() {
+<span class="nc" id="L52">        return new HttpConnectionKeepAliveStrategy();</span>
+    }
+
+    protected HttpClientConnectionManager buildConnectionManager(RestTemplateProperties restTemplateProperties) {
+<span class="nc" id="L56">        PoolingHttpClientConnectionManager poolManager = new PoolingHttpClientConnectionManager();</span>
+<span class="nc" id="L57">        poolManager.setMaxTotal(restTemplateProperties.getMaxTotalConnections());</span>
+<span class="nc" id="L58">        poolManager.setDefaultMaxPerRoute(restTemplateProperties.getMaxTotalConnections());</span>
+
+<span class="nc" id="L60">        return poolManager;</span>
+    }
+
+    protected RequestConfig buildRequestConfig(RestTemplateProperties restTemplateProperties) {
+<span class="nc" id="L64">        RequestConfig config = RequestConfig.custom()</span>
+<span class="nc" id="L65">                .setSocketTimeout(restTemplateProperties.getSocketTimeOutInSeconds() * MILLISECONDS_PER_SECOND)</span>
+<span class="nc" id="L66">                .setConnectTimeout(restTemplateProperties.getConnectTimeOutInSeconds() * MILLISECONDS_PER_SECOND)</span>
+<span class="nc" id="L67">                .setConnectionRequestTimeout(</span>
+<span class="nc" id="L68">                        restTemplateProperties.getConnectionRequestTimeOutInSeconds() * MILLISECONDS_PER_SECOND)</span>
+<span class="nc" id="L69">                .build();</span>
+
+<span class="nc" id="L71">        return config;</span>
+    }
+
+    protected HttpHost buildProxySettings(RestTemplateProperties restTemplateProperties) {
+<span class="nc" id="L75">        return Optional.ofNullable(restTemplateProperties)</span>
+<span class="nc" id="L76">                .filter(RestTemplateProperties::isProxyRequired)</span>
+<span class="nc" id="L77">                .map(p -&gt; new HttpHost(</span>
+<span class="nc" id="L78">                        restTemplateProperties.getProxyHostname(),</span>
+<span class="nc" id="L79">                        restTemplateProperties.getProxyPort()))</span>
+<span class="nc" id="L80">                .orElse(null);</span>
+    }
+
+    protected List&lt;ClientHttpRequestInterceptor&gt; buildInterceptors(ClientHttpRequestInterceptor loggingInterceptor) {
+<span class="nc" id="L84">        return Arrays.asList(Optional.ofNullable(loggingInterceptor).orElse(new LoggingInterceptor()));</span>
+    }
+
+    public void close(RestTemplate restTemplate) {
+<span class="nc bnc" id="L88" title="All 2 branches missed.">        if (restTemplate != null) {</span>
+<span class="nc" id="L89">            ClientHttpRequestFactory requestFactory = restTemplate.getRequestFactory();</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">            if (requestFactory instanceof DisposableBean) {</span>
+                try {
+<span class="nc" id="L92">                    ((DisposableBean) requestFactory).destroy();</span>
+<span class="nc" id="L93">                } catch (Exception e) {</span>
+<span class="nc" id="L94">                    LOGGER.error(e.getMessage(), e);</span>
+<span class="nc" id="L95">                }</span>
+            }
+        }
+<span class="nc" id="L98">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

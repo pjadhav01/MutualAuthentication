@@ -1,5 +1,5 @@
 {
-  "name": "template-spring-boot",
+  "name": "MutualAuthDSG",
   "version": "0.1.0",
   "description": "Spring Boot application",
   "main": "index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.ibm.com:seansund/template-spring-boot.git"
+    "url": "https://git.ng.bluemix.net/pjadhav/DSG-20180820150013489.git"
   },
   "author": "",
   "license": "ISC",

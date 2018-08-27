@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.hello.service.HelloServiceTest$GivenGetGreeting" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:52" hostname="Pradeeps-MacBook-Pro-2.local" time="0.003">
+  <properties/>
+  <testcase name="when_name_is_null_return_helloworld()" classname="com.ibm.hello.service.HelloServiceTest$GivenGetGreeting" time="0.002"/>
+  <testcase name="when_name_is_test_return_hellotest()" classname="com.ibm.hello.service.HelloServiceTest$GivenGetGreeting" time="0.0"/>
+  <system-out><![CDATA[09:47:52.550 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'config' of type [null] on target object [com.ibm.hello.service.HelloService@53ccf764] or target class [class com.ibm.hello.service.HelloService] to value [[HelloConfig: pattern=Hello there, %s!]]
+09:47:52.550 [Test worker] DEBUG com.ibm.hello.service.HelloService - Creating reply for name: world
+09:47:52.552 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'config' of type [null] on target object [com.ibm.hello.service.HelloService@623a4829] or target class [class com.ibm.hello.service.HelloService] to value [[HelloConfig: pattern=Hello there, %s!]]
+09:47:52.552 [Test worker] DEBUG com.ibm.hello.service.HelloService - Creating reply for name: test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

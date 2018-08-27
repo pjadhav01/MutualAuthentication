@@ -1,0 +1,46 @@
+Launching MutualAuthDSGServer (Open Liberty 18.0.0.2/wlp-1.0.21.cl180220180619-0403) on Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_181-b13 (en_US)
+[AUDIT   ] CWWKE0001I: The server MutualAuthDSGServer has been launched.
+[AUDIT   ] CWWKG0093A: Processing configuration drop-ins resource: /Users/pradeepjadhav/Downloads/template-spring-boot-master/build/wlp/usr/servers/MutualAuthDSGServer/configDropins/defaults/install_apps_configuration_741776.xml
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications.
+2018-08-22 09:59:56.041  INFO [-,,,] 31472 --- [cutor-thread-14] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3e742192: startup date [Wed Aug 22 09:59:56 EDT 2018]; root of context hierarchy
+2018-08-22 09:59:56.733  INFO [-,,,] 31472 --- [cutor-thread-14] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ff61777e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://172.31.120.170:9080/MutualAuthDSG/
+[AUDIT   ] CWWKZ0001I: Application MutualAuthDSG started in 4.645 seconds.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.1.RELEASE)
+2018-22-08 09:59:57.121 [35m[Default Executor-thread-31][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.session.WASSessionCore.log 140 - SESN0176I: A new session context will be created for application key default_host/MutualAuthDSG
+2018-22-08 09:59:57.140 [35m[Default Executor-thread-14][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.hello.app.Application.logStartupProfileInfo 659 - No active profile set, falling back to default profiles: default
+2018-22-08 09:59:57.152 [35m[Default Executor-thread-31][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.util.log 140 - SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+2018-22-08 09:59:57.246 [35m[Default Executor-thread-31][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.webcontainer.webapp.log 140 - SRVE0292I: Servlet Message - [MutualAuthDSG-0.1.0]:.1 Spring WebApplicationInitializers detected on classpath
+2018-22-08 10:00:01.003 [35m[Default Executor-thread-14][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.webcontainer.log 140 - SRVE0250I: Web Module 0-0 has been bound to springBootVirtualHost-9080.
+2018-22-08 10:00:01.007 [35m[Default Executor-thread-38][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.session.WASSessionCore.log 140 - SESN0176I: A new session context will be created for application key springBootVirtualHost-9080
+2018-22-08 10:00:01.008 [35m[Default Executor-thread-38][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.util.log 140 - SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+2018-22-08 10:00:01.024 [35m[Default Executor-thread-38][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.webcontainer.webapp.log 140 - SRVE0292I: Servlet Message - [0-0]:.Initializing Spring embedded WebApplicationContext
+2018-22-08 10:00:04.170 [35m[Default Executor-thread-14][0;39m [34mINFO [0;39m  template-spring-boot s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods 69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-22-08 10:00:05.578 [35m[Default Executor-thread-14][0;39m [34mINFO [0;39m  template-spring-boot s.d.s.w.p.DocumentationPluginsBootstrapper.start 160 - Context refreshed
+2018-22-08 10:00:05.651 [35m[Default Executor-thread-14][0;39m [34mINFO [0;39m  template-spring-boot s.d.s.w.p.DocumentationPluginsBootstrapper.start 163 - Found 1 custom documentation plugin(s)
+2018-22-08 10:00:05.790 [35m[Default Executor-thread-14][0;39m [34mINFO [0;39m  template-spring-boot s.d.s.w.s.ApiListingReferenceScanner.scan 41 - Scanning for api listing references
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://172.31.120.170:9080/MutualAuthDSG/
+2018-22-08 10:00:06.514 [35m[Default Executor-thread-14][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.hello.app.Application.logStarted 59 - Started Application in 12.578 seconds (JVM running for 17.67)
+[AUDIT   ] CWWKZ0001I: Application MutualAuthDSG-0.1.0 started in 14.250 seconds.
+[ERROR   ] CWWKO0221E: TCP Channel springBootHttpEndpoint-9080 initialization did not succeed.  The socket bind did not succeed for host * and port 9080.  The port might already be in use.
+[AUDIT   ] CWWKF0012I: The server installed the following features: [springBoot-2.0, servlet-3.1].
+[AUDIT   ] CWWKF0011I: The server MutualAuthDSGServer is ready to run a smarter planet.
+[AUDIT   ] CWWKG0016I: Starting server configuration update.
+[AUDIT   ] CWWKG0093A: Processing configuration drop-ins resource: /Users/pradeepjadhav/Downloads/template-spring-boot-master/build/wlp/usr/servers/MutualAuthDSGServer/configDropins/defaults/install_apps_configuration_741776.xml
+[AUDIT   ] CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[AUDIT   ] CWWKZ0009I: The application MutualAuthDSG has stopped successfully.
+2018-22-08 10:00:56.484 [35m[Default Executor-thread-106][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.webcontainer.log 140 - SRVE0250I: Web Module MutualAuthDSG-0.1.0 has been bound to default_host.
+2018-22-08 10:00:56.605 [35m[Default Executor-thread-133][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.session.WASSessionCore.log 140 - SESN0176I: A new session context will be created for application key default_host/MutualAuthDSG
+2018-22-08 10:00:56.605 [35m[Default Executor-thread-133][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.util.log 140 - SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+2018-22-08 10:00:56.665 [35m[Default Executor-thread-133][0;39m [34mINFO [0;39m  template-spring-boot com.ibm.ws.webcontainer.webapp.log 140 - SRVE0292I: Servlet Message - [MutualAuthDSG-0.1.0]:.1 Spring WebApplicationInitializers detected on classpath
+[AUDIT   ] CWWKZ0022W: Application MutualAuthDSG has not started in 30.001 seconds.
+[AUDIT   ] CWWKE0055I: Server shutdown requested on Wednesday, August 22, 2018 at 10:02 AM. The server MutualAuthDSGServer is shutting down.
+[AUDIT   ] CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[AUDIT   ] CWWKZ0009I: The application MutualAuthDSG-0.1.0 has stopped successfully.
+[AUDIT   ] CWWKE0036I: The server MutualAuthDSGServer stopped after 2 minutes, 59.044 seconds.

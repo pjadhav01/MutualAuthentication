@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildApiRequestHandler" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:50" hostname="Pradeeps-MacBook-Pro-2.local" time="0.024">
+  <properties/>
+  <testcase name="nonEmpty_baseApiPackage_returns_basePackage()" classname="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildApiRequestHandler" time="0.018"/>
+  <testcase name="empty_baseApiPackage_returns_any()" classname="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildApiRequestHandler" time="0.005"/>
+  <system-out><![CDATA[09:47:50.106 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'config' of type [null] on target object [com.ibm.cloud_garage.swagger.SwaggerDocket@b2c6479] or target class [class com.ibm.cloud_garage.swagger.SwaggerDocket] to value [com.ibm.cloud_garage.swagger.SwaggerConfig@15f9c916]
+09:47:50.125 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'config' of type [null] on target object [com.ibm.cloud_garage.swagger.SwaggerDocket@7dc13962] or target class [class com.ibm.cloud_garage.swagger.SwaggerDocket] to value [com.ibm.cloud_garage.swagger.SwaggerConfig@69f8c8c7]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

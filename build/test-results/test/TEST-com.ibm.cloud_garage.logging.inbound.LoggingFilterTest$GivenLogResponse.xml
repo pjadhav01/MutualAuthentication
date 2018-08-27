@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.cloud_garage.logging.inbound.LoggingFilterTest$GivenLogResponse" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:50" hostname="Pradeeps-MacBook-Pro-2.local" time="0.041">
+  <properties/>
+  <testcase name="call_delegate()" classname="com.ibm.cloud_garage.logging.inbound.LoggingFilterTest$GivenLogResponse" time="0.041"/>
+  <system-out><![CDATA[09:47:50.823 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'delegate' of type [null] on target object [com.ibm.cloud_garage.logging.inbound.LoggingFilter@6f240c50] or target class [class com.ibm.cloud_garage.logging.inbound.LoggingFilter] to value [Mock for RequestResponseLogger, hashCode: 1540412249]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

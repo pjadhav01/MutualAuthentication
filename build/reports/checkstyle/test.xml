@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.6.1">
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/cloud_garage/http/HttpConnectionKeepAliveStrategyTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/cloud_garage/logging/RestRequestResponseLoggerTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/cloud_garage/logging/inbound/HttpRequestWrapperTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/cloud_garage/logging/inbound/LoggingFilterTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/cloud_garage/logging/outbound/LoggingInterceptorTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/cloud_garage/swagger/SwaggerConfigTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/cloud_garage/swagger/SwaggerDocketTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/hello/controller/HelloControllerTest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/test/java/com/ibm/hello/service/HelloServiceTest.java">
+</file>
+</checkstyle>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.6.1">
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/http/HttpConnectionKeepAliveStrategy.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/LoggingContext.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/RequestLoggingContext.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/RequestResponseLogger.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/ResponseLoggingContext.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/RestRequestResponseLogger.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/inbound/ClientHttpResponseWrapper.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/inbound/HttpRequestWrapper.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/inbound/LoggingFilter.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/inbound/ReaderHelper.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/inbound/ResettableHttpServletRequest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/logging/outbound/LoggingInterceptor.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/rest_template/RestTemplateBuilder.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/rest_template/RestTemplateProperties.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/rest_template/SimpleRestTemplateProperties.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/swagger/SwaggerConfig.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/cloud_garage/swagger/SwaggerDocket.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/hello/app/Application.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/hello/config/HelloConfig.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/hello/controller/HelloController.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/hello/model/GreetingRequest.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/hello/model/GreetingResponse.java">
+</file>
+<file name="/Users/pradeepjadhav/Downloads/template-spring-boot-master/src/main/java/com/ibm/hello/service/HelloService.java">
+</file>
+</checkstyle>

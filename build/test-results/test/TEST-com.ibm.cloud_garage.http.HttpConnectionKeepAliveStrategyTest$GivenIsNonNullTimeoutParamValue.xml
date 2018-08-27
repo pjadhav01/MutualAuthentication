@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.cloud_garage.http.HttpConnectionKeepAliveStrategyTest$GivenIsNonNullTimeoutParamValue" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:50" hostname="Pradeeps-MacBook-Pro-2.local" time="0.019">
+  <properties/>
+  <testcase name="null_param()" classname="com.ibm.cloud_garage.http.HttpConnectionKeepAliveStrategyTest$GivenIsNonNullTimeoutParamValue" time="0.015"/>
+  <testcase name="null_value()" classname="com.ibm.cloud_garage.http.HttpConnectionKeepAliveStrategyTest$GivenIsNonNullTimeoutParamValue" time="0.0"/>
+  <testcase name="nonNull_value_and_param_timeout()" classname="com.ibm.cloud_garage.http.HttpConnectionKeepAliveStrategyTest$GivenIsNonNullTimeoutParamValue" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

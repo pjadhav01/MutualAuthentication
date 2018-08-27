@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SwaggerConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MutualAuthDSG</a> &gt; <a href="index.source.html" class="el_package">com.ibm.cloud_garage.swagger</a> &gt; <span class="el_source">SwaggerConfig.java</span></div><h1>SwaggerConfig.java</h1><pre class="source lang-java linenums">package com.ibm.cloud_garage.swagger;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+import springfox.documentation.service.VendorExtension;
+
+@Configuration
+@ConfigurationProperties(prefix = &quot;swagger&quot;)
+public class SwaggerConfig {
+    private String baseApiPackage;
+    private String title;
+    private String description;
+    private String version;
+    private String termsOfServiceUrl;
+    private Contact contact;
+    private String license;
+    private String licenseUrl;
+<span class="fc" id="L23">    private final List&lt;VendorExtension&gt; vendorExtensions = new ArrayList&lt;&gt;();</span>
+
+    public SwaggerConfig() {
+<span class="fc" id="L26">        super();</span>
+<span class="fc" id="L27">    }</span>
+
+    public String getBaseApiPackage() {
+<span class="fc" id="L30">        return baseApiPackage;</span>
+    }
+
+    public void setBaseApiPackage(String baseApiPackage) {
+<span class="fc" id="L34">        this.baseApiPackage = baseApiPackage;</span>
+<span class="fc" id="L35">    }</span>
+
+    public SwaggerConfig withBaseApiPackage(String baseApiPackage) {
+<span class="nc" id="L38">        this.setBaseApiPackage(baseApiPackage);</span>
+<span class="nc" id="L39">        return this;</span>
+    }
+
+    public String getTitle() {
+<span class="fc" id="L43">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="fc" id="L47">        this.title = title;</span>
+<span class="fc" id="L48">    }</span>
+
+    public SwaggerConfig withTitle(String title) {
+<span class="fc" id="L51">        this.setTitle(title);</span>
+<span class="fc" id="L52">        return this;</span>
+    }
+
+    public String getDescription() {
+<span class="fc" id="L56">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="fc" id="L60">        this.description = description;</span>
+<span class="fc" id="L61">    }</span>
+
+    public SwaggerConfig withDescription(String description) {
+<span class="fc" id="L64">        this.setDescription(description);</span>
+<span class="fc" id="L65">        return this;</span>
+    }
+
+    public String getVersion() {
+<span class="fc" id="L69">        return version;</span>
+    }
+
+    public void setVersion(String version) {
+<span class="fc" id="L73">        this.version = version;</span>
+<span class="fc" id="L74">    }</span>
+
+    public SwaggerConfig withVersion(String version) {
+<span class="fc" id="L77">        this.setVersion(version);</span>
+<span class="fc" id="L78">        return this;</span>
+    }
+
+    public String getTermsOfServiceUrl() {
+<span class="fc" id="L82">        return termsOfServiceUrl;</span>
+    }
+
+    public void setTermsOfServiceUrl(String termsOfServiceUrl) {
+<span class="fc" id="L86">        this.termsOfServiceUrl = termsOfServiceUrl;</span>
+<span class="fc" id="L87">    }</span>
+
+    public SwaggerConfig withTermsOfServiceUrl(String termsOfServiceUrl) {
+<span class="fc" id="L90">        this.setTermsOfServiceUrl(termsOfServiceUrl);</span>
+<span class="fc" id="L91">        return this;</span>
+    }
+
+    public Contact getContact() {
+<span class="fc" id="L95">        return contact;</span>
+    }
+
+    public void setContact(Contact contact) {
+<span class="fc" id="L99">        this.contact = contact;</span>
+<span class="fc" id="L100">    }</span>
+
+    public SwaggerConfig withContact(Contact contact) {
+<span class="nc" id="L103">        this.setContact(contact);</span>
+<span class="nc" id="L104">        return this;</span>
+    }
+
+    public String getLicense() {
+<span class="fc" id="L108">        return license;</span>
+    }
+
+    public void setLicense(String license) {
+<span class="fc" id="L112">        this.license = license;</span>
+<span class="fc" id="L113">    }</span>
+
+    public SwaggerConfig withLicense(String license) {
+<span class="fc" id="L116">        this.setLicense(license);</span>
+<span class="fc" id="L117">        return this;</span>
+    }
+
+    public String getLicenseUrl() {
+<span class="fc" id="L121">        return licenseUrl;</span>
+    }
+
+    public void setLicenseUrl(String licenseUrl) {
+<span class="fc" id="L125">        this.licenseUrl = licenseUrl;</span>
+<span class="fc" id="L126">    }</span>
+
+    public SwaggerConfig withLicenseUrl(String licenseUrl) {
+<span class="fc" id="L129">        this.setLicenseUrl(licenseUrl);</span>
+<span class="fc" id="L130">        return this;</span>
+    }
+
+    public List&lt;VendorExtension&gt; getVendorExtensions() {
+<span class="fc" id="L134">        return Collections.unmodifiableList(vendorExtensions);</span>
+    }
+
+    public void setVendorExtensions(List&lt;VendorExtension&gt; vendorExtensions) {
+<span class="fc" id="L138">        this.vendorExtensions.clear();</span>
+
+<span class="fc bfc" id="L140" title="All 2 branches covered.">        if (vendorExtensions != null) {</span>
+<span class="fc" id="L141">            this.vendorExtensions.addAll(vendorExtensions);</span>
+        }
+<span class="fc" id="L143">    }</span>
+
+    public SwaggerConfig withVendorExtensions(List&lt;VendorExtension&gt; vendorExtensions) {
+<span class="fc" id="L146">        this.setVendorExtensions(vendorExtensions);</span>
+<span class="fc" id="L147">        return this;</span>
+    }
+
+<span class="fc" id="L150">    public static class Contact {</span>
+        private String name;
+        private String url;
+        private String email;
+
+        public String getName() {
+<span class="fc" id="L156">            return name;</span>
+        }
+
+        public void setName(String name) {
+<span class="fc" id="L160">            this.name = name;</span>
+<span class="fc" id="L161">        }</span>
+
+        public Contact withName(String name) {
+<span class="fc" id="L164">            this.setName(name);</span>
+<span class="fc" id="L165">            return this;</span>
+        }
+
+        public String getUrl() {
+<span class="fc" id="L169">            return url;</span>
+        }
+
+        public void setUrl(String url) {
+<span class="fc" id="L173">            this.url = url;</span>
+<span class="fc" id="L174">        }</span>
+
+        public Contact withUrl(String url) {
+<span class="fc" id="L177">            this.setUrl(url);</span>
+<span class="fc" id="L178">            return this;</span>
+        }
+
+        public String getEmail() {
+<span class="fc" id="L182">            return email;</span>
+        }
+
+        public void setEmail(String email) {
+<span class="fc" id="L186">            this.email = email;</span>
+<span class="fc" id="L187">        }</span>
+
+        public Contact withEmail(String email) {
+<span class="fc" id="L190">            this.setEmail(email);</span>
+<span class="fc" id="L191">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

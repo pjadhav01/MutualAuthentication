@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.cloud_garage.logging.RestRequestResponseLoggerTest$GivenGetRequestBody" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:50" hostname="Pradeeps-MacBook-Pro-2.local" time="0.047">
+  <properties/>
+  <testcase name="empty_body()" classname="com.ibm.cloud_garage.logging.RestRequestResponseLoggerTest$GivenGetRequestBody" time="0.004"/>
+  <testcase name="body()" classname="com.ibm.cloud_garage.logging.RestRequestResponseLoggerTest$GivenGetRequestBody" time="0.002"/>
+  <testcase name="null_body()" classname="com.ibm.cloud_garage.logging.RestRequestResponseLoggerTest$GivenGetRequestBody" time="0.002"/>
+  <testcase name="exception()" classname="com.ibm.cloud_garage.logging.RestRequestResponseLoggerTest$GivenGetRequestBody" time="0.038"/>
+  <system-out><![CDATA[09:47:50.756 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'objectMapper' of type [null] on target object [com.ibm.cloud_garage.logging.RestRequestResponseLogger@504bc95] or target class [class com.ibm.cloud_garage.logging.RestRequestResponseLogger] to value [com.fasterxml.jackson.databind.ObjectMapper$$EnhancerByMockitoWithCGLIB$$11634873@4302b518]
+09:47:50.760 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'objectMapper' of type [null] on target object [com.ibm.cloud_garage.logging.RestRequestResponseLogger@3db1bf9a] or target class [class com.ibm.cloud_garage.logging.RestRequestResponseLogger] to value [com.fasterxml.jackson.databind.ObjectMapper$$EnhancerByMockitoWithCGLIB$$11634873@6764ca05]
+09:47:50.763 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'objectMapper' of type [null] on target object [com.ibm.cloud_garage.logging.RestRequestResponseLogger@52297746] or target class [class com.ibm.cloud_garage.logging.RestRequestResponseLogger] to value [com.fasterxml.jackson.databind.ObjectMapper$$EnhancerByMockitoWithCGLIB$$11634873@bc7621e]
+09:47:50.765 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'objectMapper' of type [null] on target object [com.ibm.cloud_garage.logging.RestRequestResponseLogger@3bba5193] or target class [class com.ibm.cloud_garage.logging.RestRequestResponseLogger] to value [com.fasterxml.jackson.databind.ObjectMapper$$EnhancerByMockitoWithCGLIB$$11634873@7a4f9003]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

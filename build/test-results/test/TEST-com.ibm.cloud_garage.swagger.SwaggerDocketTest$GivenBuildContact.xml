@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildContact" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:49" hostname="Pradeeps-MacBook-Pro-2.local" time="0.345">
+  <properties/>
+  <testcase name="null_config_contact_should_return_null()" classname="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildContact" time="0.34"/>
+  <testcase name="nonNull_config_contact_should_return_contact()" classname="com.ibm.cloud_garage.swagger.SwaggerDocketTest$GivenBuildContact" time="0.005"/>
+  <system-out><![CDATA[09:47:49.897 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'config' of type [null] on target object [com.ibm.cloud_garage.swagger.SwaggerDocket@71cef9cd] or target class [class com.ibm.cloud_garage.swagger.SwaggerDocket] to value [com.ibm.cloud_garage.swagger.SwaggerConfig@38000c8c]
+09:47:50.051 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'config' of type [null] on target object [com.ibm.cloud_garage.swagger.SwaggerDocket@4853564f] or target class [class com.ibm.cloud_garage.swagger.SwaggerDocket] to value [com.ibm.cloud_garage.swagger.SwaggerConfig@59c24e00]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

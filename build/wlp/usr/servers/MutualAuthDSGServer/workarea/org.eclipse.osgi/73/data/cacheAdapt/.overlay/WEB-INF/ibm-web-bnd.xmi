@@ -1,0 +1,5 @@
+<webappbnd:WebAppBinding
+xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+xmlns:webappbnd="webappbnd.xmi"
+virtualHostName="springBootVirtualHost-9080">
+</webappbnd:WebAppBinding>

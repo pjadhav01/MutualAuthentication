@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SwaggerDocket.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MutualAuthDSG</a> &gt; <a href="index.source.html" class="el_package">com.ibm.cloud_garage.swagger</a> &gt; <span class="el_source">SwaggerDocket.java</span></div><h1>SwaggerDocket.java</h1><pre class="source lang-java linenums">package com.ibm.cloud_garage.swagger;
+
+import com.google.common.base.Predicate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+
+import springfox.documentation.RequestHandler;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Component
+@EnableSwagger2
+public class SwaggerDocket {
+    @Autowired
+    private SwaggerConfig config;
+
+    public SwaggerDocket() {
+<span class="fc" id="L25">        super();</span>
+<span class="fc" id="L26">    }</span>
+
+    @Bean
+    public Docket api() {
+<span class="nc" id="L30">        return new Docket(DocumentationType.SWAGGER_2)</span>
+<span class="nc" id="L31">                .select()</span>
+<span class="nc" id="L32">                .apis(buildApiRequestHandler())</span>
+<span class="nc" id="L33">                .paths(PathSelectors.any())</span>
+<span class="nc" id="L34">                .build()</span>
+<span class="nc" id="L35">                .apiInfo(buildApiInfo());</span>
+    }
+
+    protected Predicate&lt;RequestHandler&gt; buildApiRequestHandler() {
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (!StringUtils.isEmpty(config.getBaseApiPackage())) {</span>
+<span class="fc" id="L40">            return buildBasePackageRequestHandler(config.getBaseApiPackage());</span>
+        }
+
+<span class="fc" id="L43">        return RequestHandlerSelectors.any();</span>
+    }
+
+    protected Predicate&lt;RequestHandler&gt; buildBasePackageRequestHandler(final String baseApiPackage) {
+<span class="nc" id="L47">        return RequestHandlerSelectors.basePackage(baseApiPackage);</span>
+    }
+
+    protected ApiInfo buildApiInfo() {
+<span class="fc" id="L51">        return new ApiInfo(</span>
+<span class="fc" id="L52">                config.getTitle(),</span>
+<span class="fc" id="L53">                config.getDescription(),</span>
+<span class="fc" id="L54">                config.getVersion(),</span>
+<span class="fc" id="L55">                config.getTermsOfServiceUrl(),</span>
+<span class="fc" id="L56">                buildContact(),</span>
+<span class="fc" id="L57">                config.getLicense(),</span>
+<span class="fc" id="L58">                config.getLicenseUrl(),</span>
+<span class="fc" id="L59">                config.getVendorExtensions());</span>
+    }
+
+    protected Contact buildContact() {
+<span class="fc" id="L63">        final SwaggerConfig.Contact contact = config.getContact();</span>
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        return contact != null ? new Contact(contact.getName(), contact.getUrl(), contact.getEmail()) : null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

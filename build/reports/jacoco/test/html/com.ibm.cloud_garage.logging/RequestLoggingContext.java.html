@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RequestLoggingContext.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MutualAuthDSG</a> &gt; <a href="index.source.html" class="el_package">com.ibm.cloud_garage.logging</a> &gt; <span class="el_source">RequestLoggingContext.java</span></div><h1>RequestLoggingContext.java</h1><pre class="source lang-java linenums">package com.ibm.cloud_garage.logging;
+
+import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import org.springframework.http.HttpHeaders;
+
+@JsonRootName(value = &quot;HttpRequestLoggingContext&quot;)
+@JsonPropertyOrder({ &quot;url&quot;, &quot;method&quot;, &quot;headers&quot;, &quot;body&quot; })
+<span class="fc" id="L11">public class RequestLoggingContext implements LoggingContext {</span>
+    private String url;
+    private String method;
+    private HttpHeaders headers;
+    private Object body;
+
+    public String getUrl() {
+<span class="nc" id="L18">        return url;</span>
+    }
+
+    public void setUrl(String url) {
+<span class="fc" id="L22">        this.url = url;</span>
+<span class="fc" id="L23">    }</span>
+
+    public RequestLoggingContext withUrl(String url) {
+<span class="fc" id="L26">        this.setUrl(url);</span>
+<span class="fc" id="L27">        return this;</span>
+    }
+
+    public String getMethod() {
+<span class="nc" id="L31">        return method;</span>
+    }
+
+    public void setMethod(String method) {
+<span class="fc" id="L35">        this.method = method;</span>
+<span class="fc" id="L36">    }</span>
+
+    public RequestLoggingContext withMethod(String method) {
+<span class="fc" id="L39">        this.setMethod(method);</span>
+<span class="fc" id="L40">        return this;</span>
+    }
+
+    public HttpHeaders getHeaders() {
+<span class="nc" id="L44">        return headers;</span>
+    }
+
+    public void setHeaders(HttpHeaders headers) {
+<span class="fc" id="L48">        this.headers = headers;</span>
+<span class="fc" id="L49">    }</span>
+
+    public RequestLoggingContext withHeaders(HttpHeaders headers) {
+<span class="fc" id="L52">        this.setHeaders(headers);</span>
+<span class="fc" id="L53">        return this;</span>
+    }
+
+    public Object getBody() {
+<span class="nc" id="L57">        return body;</span>
+    }
+
+    public void setBody(Object body) {
+<span class="fc" id="L61">        this.body = body;</span>
+<span class="fc" id="L62">    }</span>
+
+    public RequestLoggingContext withBody(Object body) {
+<span class="fc" id="L65">        this.setBody(body);</span>
+<span class="fc" id="L66">        return this;</span>
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L72">            return true;</span>
+        }
+<span class="pc bpc" id="L74" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L75">            return false;</span>
+        }
+<span class="fc" id="L77">        RequestLoggingContext that = (RequestLoggingContext) o;</span>
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">        return Objects.equals(url, that.url)</span>
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">                &amp;&amp; Objects.equals(method, that.method)</span>
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">                &amp;&amp; Objects.equals(headers, that.headers)</span>
+<span class="pc bpc" id="L81" title="1 of 2 branches missed.">                &amp;&amp; Objects.equals(body, that.body);</span>
+    }
+
+    @Override
+    public int hashCode() {
+
+<span class="nc" id="L87">        return Objects.hash(url, method, headers, body);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

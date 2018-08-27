@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ResettableHttpServletRequest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MutualAuthDSG</a> &gt; <a href="index.source.html" class="el_package">com.ibm.cloud_garage.logging.inbound</a> &gt; <span class="el_source">ResettableHttpServletRequest.java</span></div><h1>ResettableHttpServletRequest.java</h1><pre class="source lang-java linenums">package com.ibm.cloud_garage.logging.inbound;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import javax.servlet.ReadListener;
+import javax.servlet.ServletInputStream;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class ResettableHttpServletRequest extends HttpServletRequestWrapper {
+<span class="fc" id="L18">    private static Logger logger = LoggerFactory.getLogger(ResettableHttpServletRequest.class);</span>
+
+    private final HttpServletRequest request;
+    private SimpleServletInputStream servletStream;
+
+    private byte[] rawData;
+
+    public ResettableHttpServletRequest(ServletRequest request) {
+<span class="nc" id="L26">        this((HttpServletRequest) request);</span>
+<span class="nc" id="L27">    }</span>
+
+    public ResettableHttpServletRequest(HttpServletRequest request) {
+<span class="nc" id="L30">        super(request);</span>
+<span class="nc" id="L31">        this.request = request;</span>
+<span class="nc" id="L32">        this.servletStream = new SimpleServletInputStream(request);</span>
+<span class="nc" id="L33">    }</span>
+
+    public void resetInputStream() {
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (rawData != null) {</span>
+<span class="nc" id="L37">            servletStream.setInputStream(new ByteArrayInputStream(rawData));</span>
+        }
+<span class="nc" id="L39">    }</span>
+
+    @Override
+    public ServletInputStream getInputStream() throws IOException {
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (rawData == null) {</span>
+<span class="nc" id="L44">            rawData = ReaderHelper.readerToByteArray(this.request.getReader());</span>
+<span class="nc" id="L45">            servletStream.setInputStream(new ByteArrayInputStream(rawData));</span>
+        }
+
+<span class="nc" id="L48">        return servletStream;</span>
+    }
+
+    @Override
+    public BufferedReader getReader() throws IOException {
+<span class="nc" id="L53">        return new BufferedReader(new InputStreamReader(getInputStream(), getCharacterEncoding()));</span>
+    }
+
+    private class SimpleServletInputStream extends ServletInputStream {
+        private final HttpServletRequest originalRequest;
+        private InputStream inputStream;
+
+<span class="nc" id="L60">        public SimpleServletInputStream(HttpServletRequest originalRequest) {</span>
+<span class="nc" id="L61">            this.originalRequest = originalRequest;</span>
+<span class="nc" id="L62">        }</span>
+
+        public InputStream getInputStream() {
+<span class="nc" id="L65">            return inputStream;</span>
+        }
+
+        public void setInputStream(InputStream inputStream) {
+<span class="nc" id="L69">            this.inputStream = inputStream;</span>
+<span class="nc" id="L70">        }</span>
+
+        @Override
+        public boolean isFinished() {
+            try {
+<span class="nc bnc" id="L75" title="All 2 branches missed.">                return inputStream.available() == -1;</span>
+<span class="nc" id="L76">            } catch (IOException ex) {</span>
+<span class="nc" id="L77">                return true;</span>
+            }
+        }
+
+        @Override
+        public boolean isReady() {
+            try {
+<span class="nc bnc" id="L84" title="All 2 branches missed.">                return inputStream.available() != -1;</span>
+<span class="nc" id="L85">            } catch (IOException ex) {</span>
+<span class="nc" id="L86">                return false;</span>
+            }
+        }
+
+        @Override
+        public void setReadListener(ReadListener listener) {
+            try {
+<span class="nc" id="L93">                originalRequest.getInputStream().setReadListener(listener);</span>
+<span class="nc" id="L94">            } catch (IOException e) {</span>
+<span class="nc" id="L95">                logger.error(&quot;Unable to getInputStream()&quot;);</span>
+<span class="nc" id="L96">            }</span>
+<span class="nc" id="L97">        }</span>
+
+        @Override
+        public int read() throws IOException {
+<span class="nc" id="L101">            return inputStream.read();</span>
+        }
+
+        @Override
+        public int read(byte[] bytes) throws IOException {
+<span class="nc" id="L106">            return inputStream.read(bytes);</span>
+        }
+
+        @Override
+        public int read(byte[] bytes, int i, int i1) throws IOException {
+<span class="nc" id="L111">            return inputStream.read(bytes, i, i1);</span>
+        }
+
+        @Override
+        public long skip(long l) throws IOException {
+<span class="nc" id="L116">            return inputStream.skip(l);</span>
+        }
+
+        @Override
+        public int available() throws IOException {
+<span class="nc" id="L121">            return inputStream.available();</span>
+        }
+
+        @Override
+        public void close() throws IOException {
+<span class="nc" id="L126">            inputStream.close();</span>
+<span class="nc" id="L127">        }</span>
+
+        @Override
+        public void mark(int i) {
+<span class="nc" id="L131">            inputStream.mark(i);</span>
+<span class="nc" id="L132">        }</span>
+
+        @Override
+        public void reset() throws IOException {
+<span class="nc" id="L136">            inputStream.reset();</span>
+<span class="nc" id="L137">        }</span>
+
+        @Override
+        public boolean markSupported() {
+<span class="nc" id="L141">            return inputStream.markSupported();</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

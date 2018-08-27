@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.cloud_garage.logging.outbound.LoggingInterceptorTest$GivenIntercept" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-08-22T13:47:50" hostname="Pradeeps-MacBook-Pro-2.local" time="0.013">
+  <properties/>
+  <testcase name="execute()" classname="com.ibm.cloud_garage.logging.outbound.LoggingInterceptorTest$GivenIntercept" time="0.006"/>
+  <testcase name="exception()" classname="com.ibm.cloud_garage.logging.outbound.LoggingInterceptorTest$GivenIntercept" time="0.006"/>
+  <system-out><![CDATA[09:47:50.917 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'delegate' of type [null] on target object [com.ibm.cloud_garage.logging.outbound.LoggingInterceptor@5aed470e] or target class [class com.ibm.cloud_garage.logging.outbound.LoggingInterceptor] to value [Mock for RequestResponseLogger, hashCode: 1468829253]
+09:47:50.927 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'delegate' of type [null] on target object [com.ibm.cloud_garage.logging.outbound.LoggingInterceptor@55859f2c] or target class [class com.ibm.cloud_garage.logging.outbound.LoggingInterceptor] to value [Mock for RequestResponseLogger, hashCode: 1447199968]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
